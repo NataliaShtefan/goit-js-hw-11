@@ -9,7 +9,11 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-let lightbox;
+let lightbox = new SimpleLightbox('.gallery li', {
+  caption: true,
+  captionsData: 'alt',
+  captionDelay: 250,
+});;
 
  export function createGallery (arr) {
 gallery.innerHTML =  arr.map((image) => 
@@ -26,15 +30,7 @@ gallery.innerHTML =  arr.map((image) =>
 
 </li>`).join('');
   
-if (!lightbox) {
-  lightbox = new SimpleLightbox('.gallery li', {
-    caption: true,
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-} else {
-  lightbox.refresh();
-}
+lightbox.refresh();
 }
   
 export function showError(message) {
@@ -59,7 +55,6 @@ export function showError(message) {
   
   export function hideLoader() {
     console.log('-');
-    setTimeout(() => {
       document.querySelector('.div-loader').classList.add('hidden');
-    },2000);
+    
   }

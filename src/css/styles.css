@@ -34,7 +34,7 @@
 
 .gallery-item {
 display: block;
-
+position: relative;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px #0000001a;
@@ -51,10 +51,7 @@ flex-shrink: 0;
   display: block
 }
 
-.gallery-item .info {
-  padding: 8px;
-  background-color: #fff
-}
+
 
 .gallery-item:hover {
   transform: scale(1.05)
@@ -67,9 +64,8 @@ flex-shrink: 0;
   width: 360px;
 height: 48px;
 flex-shrink: 0;
-  position: fixed;
+position: absolute;
   bottom: 0;
-  width: 100%;
   background-color: #f1f1f1;
 }
 
@@ -82,7 +78,7 @@ flex-shrink: 0;
 }
 
 .search-input:hover,
-search-input:focus {
+.search-input:focus {
   border-color: #000
 }
 
