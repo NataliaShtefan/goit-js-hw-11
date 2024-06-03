@@ -9,7 +9,7 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
-let lightbox = new SimpleLightbox('.gallery li', {
+let lightbox = new SimpleLightbox('.gallery a', {
   caption: true,
   captionsData: 'alt',
   captionDelay: 250,
@@ -55,6 +55,7 @@ export function showError(message) {
   
   export function hideLoader() {
     console.log('-');
+    setTimeout(() => {
       document.querySelector('.div-loader').classList.add('hidden');
-    
+    },2000);
   }
